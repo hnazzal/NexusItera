@@ -18,14 +18,14 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20">
+              <div className="w-14 h-14">
                  <Logo className="w-full h-full" withText={false} />
               </div>
               <div className="flex flex-col justify-center">
-                <span className="font-display font-bold text-2xl tracking-tight text-brand-text leading-none transition-colors">
+                <span className="font-display font-bold text-xl tracking-tight text-brand-text leading-none transition-colors">
                     NEXUS<span className="text-brand-secondary dark:text-brand-primary transition-colors">ITERA</span>
                 </span>
-                <span className="text-[10px] text-brand-muted tracking-[0.25em] uppercase leading-none mt-2 font-medium">
+                <span className="text-[10px] text-brand-muted tracking-[0.25em] uppercase leading-none mt-1 font-medium">
                   Intelligent Systems
                 </span>
               </div>

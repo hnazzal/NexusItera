@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { PageRoute } from '../types';
-import { Button } from './Button';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { Logo } from './Logo';
@@ -43,18 +42,18 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-deep/80 backdrop-blur-md border-b border-brand-surfaceLight py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <NavLink to={PageRoute.HOME} className="flex items-center gap-4 group">
-              <div className="w-24 h-24 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+            <NavLink to={PageRoute.HOME} className="flex items-center gap-3 group">
+              <div className="w-14 h-14 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
                  <Logo className="w-full h-full" withText={false} />
               </div>
               <div className="flex flex-col justify-center">
-                <span className="font-display font-bold text-3xl tracking-tight text-brand-text leading-none transition-colors">
+                <span className="font-display font-bold text-2xl tracking-tight text-brand-text leading-none transition-colors">
                   NEXUS<span className="text-brand-secondary dark:text-brand-primary transition-colors">ITERA</span>
                 </span>
-                <span className="text-xs text-brand-muted tracking-[0.25em] uppercase leading-none mt-2 font-medium">
+                <span className="text-[10px] text-brand-muted tracking-[0.25em] uppercase leading-none mt-1 font-medium">
                   Intelligent Systems
                 </span>
               </div>
@@ -96,10 +95,6 @@ export const Navbar: React.FC = () => {
                 <span>{language === 'en' ? 'عربي' : 'EN'}</span>
                 </button>
             </div>
-
-            <NavLink to={PageRoute.CONTACT}>
-               <Button variant="glow" size="sm">{t('nav.startProject')}</Button>
-            </NavLink>
           </div>
 
           {/* Mobile menu button */}

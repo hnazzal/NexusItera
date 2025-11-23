@@ -20,78 +20,74 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
             <stop offset="50%" stopColor="#2D6BFF" />
             <stop offset="100%" stopColor="#7000FF" />
           </linearGradient>
+          <filter id="glow-point" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
         </defs>
 
-        {/* Background Orbit: Represents the ecosystem/world */}
+        {/* Background Orbit: Represents the ecosystem */}
         <circle 
           cx="50" 
           cy="50" 
           r="45" 
           stroke="url(#logo_gradient_flow)" 
           strokeWidth="0.5" 
-          opacity="0.15" 
+          opacity="0.1" 
           strokeDasharray="4 4" 
-          className="origin-center animate-[spin_10s_linear_infinite] transition-all duration-700 group-hover/logo:opacity-30"
-        />
-        
-        {/* Secondary Inner Orbit: Reveals on hover for technical depth */}
-        <circle 
-          cx="50" 
-          cy="50" 
-          r="35" 
-          stroke="url(#logo_gradient_flow)" 
-          strokeWidth="0.25" 
-          opacity="0" 
-          strokeDasharray="2 2" 
-          className="origin-center animate-[spin_15s_linear_infinite_reverse] transition-all duration-700 group-hover/logo:opacity-20"
+          className="origin-center animate-[spin_12s_linear_infinite] transition-all duration-700 group-hover/logo:opacity-30"
         />
 
-        {/* The Neural Flow N: A single continuous fluid line */}
+        {/* The Neural Flow N - Defined as a path for the animation to follow */}
         <path
+          id="neural-path"
           d="M 30 80 L 30 35 Q 30 20 45 30 L 55 70 Q 70 80 70 65 L 70 20"
           stroke="url(#logo_gradient_flow)"
-          strokeWidth="12"
+          strokeWidth="10"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="transition-all duration-500 ease-out group-hover/logo:stroke-[14px]"
+          className="transition-all duration-500 ease-out group-hover/logo:stroke-[12px]"
         />
 
-        {/* Input Node (Data Start) */}
+        {/* Traveling Data Packet: The "Sweet" Movement */}
+        <circle r="3" fill="white" filter="url(#glow-point)">
+          <animateMotion 
+            dur="3s" 
+            repeatCount="indefinite"
+            keyPoints="0;1"
+            keyTimes="0;1"
+            calcMode="linear"
+          >
+            <mpath href="#neural-path" />
+          </animateMotion>
+        </circle>
+
+        {/* Input Node */}
         <circle 
           cx="30" 
           cy="80" 
-          r="5" 
+          r="4" 
           fill="#00F0FF" 
-          className="transition-all duration-300 ease-out group-hover/logo:r-6 group-hover/logo:fill-white"
+          className="transition-all duration-300 ease-out group-hover/logo:r-5 group-hover/logo:fill-white"
         />
 
-        {/* Output Node (AI Result) - With Pulsing Effect */}
+        {/* Output Node (AI Result) */}
         <g>
             <circle 
               cx="70" 
               cy="20" 
-              r="6" 
+              r="5" 
               fill="#7000FF" 
-              className="transition-all duration-300 ease-out group-hover/logo:r-7 group-hover/logo:fill-white" 
+              className="transition-all duration-300 ease-out group-hover/logo:r-6 group-hover/logo:fill-white" 
             />
-            {/* Pulse Ring 1 */}
+            {/* Pulse Ring */}
             <circle 
               cx="70" 
               cy="20" 
-              r="12" 
+              r="10" 
               stroke="#7000FF" 
-              strokeWidth="1.5" 
+              strokeWidth="1" 
               className="opacity-50 animate-pulse transition-colors duration-300 group-hover/logo:stroke-[#00F0FF]" 
-            />
-            {/* Pulse Ring 2 (Ping) */}
-            <circle 
-              cx="70" 
-              cy="20" 
-              r="18" 
-              stroke="#7000FF" 
-              strokeWidth="0.5" 
-              className="opacity-20 animate-ping transition-opacity duration-300 group-hover/logo:opacity-50" 
-              style={{ animationDuration: '3s' }} 
             />
         </g>
       </svg>
