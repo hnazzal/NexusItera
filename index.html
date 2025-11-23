@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020408" />
+    <meta
+      name="description"
+      content="NexusItera - Where Ideas Connect and Evolve"
+    />
+    <title>NexusItera | Intelligent Engineering</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'Cairo', 'sans-serif'],
+              display: ['Space Grotesk', 'Cairo', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                deep: 'var(--bg-deep)',      
+                dark: 'var(--bg-dark)',      
+                surface: 'var(--bg-surface)',   
+                surfaceLight: 'var(--bg-surface-light)',
+                primary: '#00F0FF',   // Neon Cyan (Constant)
+                secondary: '#7000FF', // Neon Purple (Constant)
+                accent: '#00B8D4',    // Darker Cyan (Constant)
+                text: 'var(--text-main)',      
+                muted: 'var(--text-muted)',     
+                border: 'var(--border-color)',
+              }
+            },
+            backgroundImage: {
+              'hero-pattern': "url('https://grainy-gradients.vercel.app/noise.svg')",
+              'grid-pattern': "linear-gradient(to right, var(--bg-surface-light) 1px, transparent 1px), linear-gradient(to bottom, var(--bg-surface-light) 1px, transparent 1px)",
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              glow: {
+                '0%': { boxShadow: '0 0 5px #00F0FF, 0 0 10px #00F0FF' },
+                '100%': { boxShadow: '0 0 20px #00F0FF, 0 0 30px #00F0FF' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Light Mode Defaults */
+        --bg-deep: #F8FAFC;       /* Slate 50 */
+        --bg-dark: #F1F5F9;       /* Slate 100 */
+        --bg-surface: #FFFFFF;    /* White */
+        --bg-surface-light: #E2E8F0; /* Slate 200 (Borders) */
+        --text-main: #0F172A;     /* Slate 900 */
+        --text-muted: #64748B;    /* Slate 500 */
+        --border-color: #CBD5E1;  /* Slate 300 */
+      }
+
+      .dark {
+        /* Dark Mode Overrides */
+        --bg-deep: #020408;       /* Void Black */
+        --bg-dark: #050B14;       /* Deep Black/Blue */
+        --bg-surface: #0A1A2F;    /* Deep Space Blue */
+        --bg-surface-light: #1E293B; /* Slate 800 (Highlight/Border) */
+        --text-main: #E2E8F0;     /* Slate 200 */
+        --text-muted: #94A3B8;    /* Slate 400 */
+        --border-color: #1E293B;
+      }
+
+      body {
+        font-family: 'Outfit', 'Cairo', sans-serif;
+        background-color: var(--bg-deep);
+        color: var(--text-main);
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', 'Cairo', sans-serif;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-deep); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--bg-surface-light); 
+        border-radius: 4px;
+        border: 1px solid var(--bg-surface);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00F0FF; 
+      }
+      
+      .glass-card {
+        background: rgba(10, 26, 47, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 240, 255, 0.1);
+      }
+      
+      .neon-text {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+      }
+      
+      /* Light mode overrides for glass effect if needed */
+      html:not(.dark) .glass-card {
+         background: rgba(255, 255, 255, 0.7);
+         border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
