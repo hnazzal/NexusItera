@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -17,13 +16,11 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { BackToTopButton } from './components/BackToTopButton';
 import { AIChatbot } from './components/AIChatbot';
 import { ScrollProgress } from './components/ScrollProgress';
-import { CustomCursor } from './components/CustomCursor';
 
 const Layout: React.FC = () => {
   const { dir } = useLanguage();
   return (
     <div dir={dir} className="min-h-screen flex flex-col bg-brand-deep font-sans selection:bg-brand-primary selection:text-brand-deep transition-colors duration-300">
-      <CustomCursor />
       <ScrollProgress />
       <Navbar />
       <main className="flex-grow">

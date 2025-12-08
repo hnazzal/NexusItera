@@ -58,10 +58,12 @@ export const AIChatbot: React.FC = () => {
 
     try {
       let botResponseText = '';
+      // Safe check for process.env
+      const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
 
-      if (process.env.API_KEY) {
+      if (apiKey) {
         // Use Real Gemini API
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey });
         const response = await ai.models.generateContent({
           model: 'gemini-2.5-flash',
           contents: input,
@@ -118,8 +120,8 @@ export const AIChatbot: React.FC = () => {
     }
     if (q.includes('contact') || q.includes('email') || q.includes('تواصل')) {
       return isAr
-        ? "يمكنك التواصل معنا عبر صفحة الاتصال أو البريد hello@nexusitera.com."
-        : "You can reach us via the Contact page or email hello@nexusitera.com.";
+        ? "يمكنك التواصل معنا عبر صفحة الاتصال أو البريد hello@nexusitera.tech."
+        : "You can reach us via the Contact page or email hello@nexusitera.tech.";
     }
     if (q.includes('price') || q.includes('cost') || q.includes('سعر')) {
       return isAr
@@ -136,7 +138,7 @@ export const AIChatbot: React.FC = () => {
       {/* Launcher Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-8 ${dir === 'rtl' ? 'left-8' : 'right-8'} z-50 w-16 h-16 rounded-full bg-brand-surface border border-brand-primary/50 shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center justify-center text-brand-primary hover:scale-110 transition-all duration-300 group overflow-hidden`}
+        className={`fixed bottom-8 ${dir === 'rtl' ? 'left-8' : 'right-8'} z-50 w-16 h-16 rounded-full bg-brand-surface border border-brand-primary/50 shadow-[0_0_20px_rgba(0,163,204,0.4)] flex items-center justify-center text-brand-primary hover:scale-110 transition-all duration-300 group overflow-hidden`}
         aria-label="Toggle Chat"
       >
         <div className="absolute inset-0 bg-brand-primary/10 rounded-full animate-pulse-slow"></div>

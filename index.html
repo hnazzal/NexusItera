@@ -4,26 +4,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0F172A" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%236D28D9%22/></svg>">
+    <meta name="theme-color" content="#0A1A2F" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%2300A3CC%22/></svg>">
     
     <!-- SEO & Social Meta Tags -->
-    <title>NexusItera | Intelligent Engineering</title>
-    <meta name="description" content="NexusItera - AI-Powered Software Solutions. We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
-    
-    <!-- Open Graph / Facebook -->
+    <title>NexusItera Tech | Intelligent Systems & AI Solutions</title>
+    <meta name="description" content="NexusItera Tech - Enterprise AI Solutions, Software Engineering, and Intelligent Automation Systems." />
+    <meta property="og:title" content="NexusItera Tech | Intelligent Systems" />
+    <meta property="og:description" content="We build intelligent products that simplify work. Explore our AI-powered ecosystem." />
+    <meta property="og:image" content="https://picsum.photos/1200/630?random=1" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nexusitera.com/" />
-    <meta property="og:title" content="NexusItera | Intelligent Engineering" />
-    <meta property="og:description" content="We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://nexusitera.com/" />
-    <meta property="twitter:title" content="NexusItera | Intelligent Engineering" />
-    <meta property="twitter:description" content="We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" />
+    
+    <!-- Polyfill process for libraries that expect it -->
+    <script>
+      window.process = { env: {} };
+    </script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,95 +33,122 @@
             },
             colors: {
               brand: {
-                deep: 'var(--bg-deep)',      
-                dark: 'var(--bg-dark)',      
-                surface: 'var(--bg-surface)',   
-                surfaceLight: 'var(--bg-surface-light)',
-                primary: '#6D28D9',   // Royal Purple
-                secondary: '#3B82F6', // Sky Blue
-                accent: '#3B82F6',    // Sky Blue
-                pink: '#F472B6',      // Soft Pink
-                yellow: '#FACC15',    // Light Gold
-                text: 'var(--text-main)',      
-                muted: 'var(--text-muted)',     
-                border: 'var(--border-color)',
+                deep: 'var(--bg-deep)',        /* Main Background */
+                dark: 'var(--bg-dark)',        /* Secondary Background */
+                surface: 'var(--bg-surface)',  /* Cards / Nav */
+                surfaceLight: 'var(--bg-surface-light)', 
+                primary: 'var(--primary)',     /* Deep Tech Cyan */
+                secondary: 'var(--secondary)', /* Cyber Purple */
+                accent: 'var(--accent)',       /* Teal/Pink */
+                text: 'var(--text-main)',      /* Main Headings */
+                muted: 'var(--text-muted)',    /* Subtitles */
+                border: 'var(--border)',
+                yellow: '#FACC15',
+                pink: '#F472B6',
               }
             },
             backgroundImage: {
-              'hero-pattern': "url('https://grainy-gradients.vercel.app/noise.svg')",
-              'grid-pattern': "linear-gradient(to right, var(--bg-surface-light) 1px, transparent 1px), linear-gradient(to bottom, var(--bg-surface-light) 1px, transparent 1px)",
-              'gradient-primary': "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
+              'hero-glow': "var(--hero-glow)",
+              'gradient-primary': "linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)",
+              'glass-panel': "var(--glass-panel)",
             },
             animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'glow': 'glow 2s ease-in-out infinite alternate',
+              'glow': 'glow 3s ease-in-out infinite alternate',
               'float': 'float 6s ease-in-out infinite',
               'float-delayed': 'float 6s ease-in-out 3s infinite',
-              'shine': 'shine 1.5s ease-out infinite',
-              'text-shimmer': 'textShimmer 3s ease infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'grid-move': 'gridMove 20s linear infinite',
+              'dash': 'dash 3s linear infinite',
+              'scan': 'scan 4s ease-in-out infinite',
+              'shine': 'shine 1.5s ease-in-out infinite',
+              'text-shimmer': 'textShimmer 3s ease-in-out infinite alternate',
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               glow: {
-                '0%': { boxShadow: '0 0 5px #6D28D9, 0 0 10px #6D28D9' },
-                '100%': { boxShadow: '0 0 20px #6D28D9, 0 0 30px #6D28D9' },
+                '0%': { boxShadow: '0 0 5px var(--primary-alpha)' },
+                '100%': { boxShadow: '0 0 20px var(--secondary-alpha)' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-20px)' },
               },
+              gridMove: {
+                '0%': { transform: 'translateY(0)' },
+                '100%': { transform: 'translateY(40px)' },
+              },
+              dash: {
+                to: { strokeDashoffset: '-20' },
+              },
+              scan: {
+                '0%, 100%': { top: '0%' },
+                '50%': { top: '100%' },
+              },
               shine: {
                 '0%': { left: '-100%' },
-                '100%': { left: '100%' }
+                '100%': { left: '200%' },
               },
               textShimmer: {
-                '0%, 100%': {
-                  'background-size': '200% 200%',
-                  'background-position': 'left center'
-                },
-                '50%': {
-                  'background-size': '200% 200%',
-                  'background-position': 'right center'
-                }
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '100% 50%' },
               }
             }
           },
         },
       };
     </script>
-    <!-- Google Fonts with Preconnect for speed -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        /* Modern Luxurious Dark Palette */
-        --bg-deep: #0F172A;       /* Deep Navy */
-        --bg-dark: #020617;       /* Darker Navy */
-        --bg-surface: #1E293B;    /* Slate 800 */
-        --bg-surface-light: #334155; /* Slate 700 */
-        --text-main: #F8FAFC;     /* Soft White */
-        --text-muted: #CBD5E1;    /* Soft Gray */
-        --border-color: #334155;  /* Slate 700 */
+        /* LIGHT MODE PALETTE */
+        --bg-deep: #F8FAFC;       /* Slate 50 */
+        --bg-dark: #F1F5F9;       /* Slate 100 */
+        --bg-surface: #FFFFFF;    /* White */
+        --bg-surface-light: #E2E8F0; /* Slate 200 */
+        
+        --text-main: #0F172A;     /* Slate 900 */
+        --text-muted: #64748B;    /* Slate 500 */
+        
+        --primary: #00A3CC;       /* Deep Tech Cyan (Darker than #00F0FF) */
+        --primary-alpha: rgba(0, 163, 204, 0.2);
+        --secondary: #7000FF;     /* Deep Neon Purple */
+        --secondary-alpha: rgba(112, 0, 255, 0.2);
+        --accent: #008BA3;        /* Darker Accent Cyan */
+        
+        --border: #CBD5E1;        /* Slate 300 */
+        
+        --hero-glow: radial-gradient(circle at 50% 50%, rgba(0, 163, 204, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+        --glass-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
       }
 
-      /* Optional Light Mode Overrides if user toggles, but default is dark per request */
-      .light {
-        --bg-deep: #F8FAFC;
-        --bg-dark: #F1F5F9;
-        --bg-surface: #FFFFFF;
-        --bg-surface-light: #E2E8F0;
-        --text-main: #0F172A;
-        --text-muted: #64748B;
-        --border-color: #CBD5E1;
-      }
-
-      html {
-        scroll-behavior: smooth;
+      .dark {
+        /* DARK MODE PALETTE - FUTURISTIC SPACE */
+        --bg-deep: #020408;       /* Absolute Void */
+        --bg-dark: #050B14;       /* Deep Space */
+        --bg-surface: #0A1A2F;    /* Navy Void */
+        --bg-surface-light: #1E293B; 
+        
+        --text-main: #E2E8F0;     
+        --text-muted: #94A3B8;    
+        
+        --primary: #00A3CC;       /* Deep Tech Cyan */
+        --primary-alpha: rgba(0, 163, 204, 0.2);
+        --secondary: #7000FF;     /* Cyber Purple */
+        --secondary-alpha: rgba(112, 0, 255, 0.2);
+        --accent: #F472B6;        /* Neon Pink Accent */
+        
+        --border: #1E293B;
+        
+        --hero-glow: radial-gradient(circle at 50% 50%, rgba(0, 163, 204, 0.15) 0%, rgba(13, 15, 23, 0) 60%);
+        --glass-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
       }
 
       body {
@@ -136,83 +158,60 @@
         overflow-x: hidden;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      h1, h2, h3, h4, h5, h6 {
+      
+      h1, h2, h3, h4 {
         font-family: 'Space Grotesk', 'Cairo', sans-serif;
       }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--bg-deep); }
+      ::-webkit-scrollbar-thumb { background: var(--bg-surface-light); border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
       
-      /* Refined Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg-deep); 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--bg-surface-light); 
-        border-radius: 9999px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #6D28D9; 
-      }
-      
-      /* Initial Loader */
       .initial-loader {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        background-color: var(--bg-deep);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out, visibility 0.5s;
-      }
-      .initial-loader.hidden {
-        opacity: 0;
-        visibility: hidden;
+        display: flex; justify-content: center; align-items: center;
+        height: 100vh; width: 100vw; background-color: var(--bg-deep);
+        position: fixed; top: 0; left: 0; z-index: 9999;
       }
       .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid var(--bg-surface-light);
-        border-top-color: #6D28D9;
+        width: 50px; height: 50px;
+        border: 2px solid var(--primary-alpha);
+        border-top-color: var(--primary);
+        border-right-color: var(--secondary);
         border-radius: 50%;
-        animation: spin 1s linear infinite;
-        box-shadow: 0 0 15px rgba(109, 40, 217, 0.3);
+        animation: spin 0.8s linear infinite;
       }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .initial-loader.hidden { opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="preload">
     <div id="root">
       <div class="initial-loader" id="loader">
         <div class="spinner"></div>
       </div>
     </div>
     <script>
-      // Hide loader when React mounts
       window.onload = function() {
+        document.body.classList.remove('preload');
         setTimeout(function() {
           const loader = document.getElementById('loader');
           if(loader) loader.classList.add('hidden');
-        }, 500);
+        }, 800);
       };
     </script>
   <script type="module" src="/index.tsx"></script>

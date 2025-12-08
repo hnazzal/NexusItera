@@ -2,7 +2,7 @@
 import React from 'react';
 import { SectionTitle } from '../components/SectionTitle';
 import { TEAM_DATA } from '../constants';
-import { Target, Eye, Heart, Award, Zap, Users, Code, Coffee } from 'lucide-react';
+import { Target, Eye, Heart, Award, Zap, Users, Code, Coffee, Landmark, Globe, BarChart2, Cpu, ShieldCheck, Layers } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 import { LazyImage } from '../components/LazyImage';
@@ -92,6 +92,70 @@ const About: React.FC = () => {
               <p className="text-brand-muted leading-relaxed">
                 {language === 'en' ? "Integrity in code, transparency in communication, and relentless pursuit of quality." : "النزاهة في الكود، والشفافية في التواصل، والسعي الدؤوب للجودة."}
               </p>
+            </div>
+          </RevealOnScroll>
+        </div>
+
+        {/* DOMAIN EXPERTISE SECTION (NEW) */}
+        <div className="mb-32">
+          <SectionTitle title={t('sections.expertiseTitle')} subtitle={t('sections.expertiseSub')} />
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              {/* Card 1: FinTech */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-primary/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <Landmark className="w-6 h-6 text-brand-primary" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp1_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp1_desc')}</p>
+              </div>
+
+              {/* Card 2: Enterprise */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-secondary/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <Globe className="w-6 h-6 text-brand-secondary" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp2_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp2_desc')}</p>
+              </div>
+
+              {/* Card 3: Big Data */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-accent/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <BarChart2 className="w-6 h-6 text-brand-accent" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp3_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp3_desc')}</p>
+              </div>
+
+              {/* Card 4: AI Scale */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-primary/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <Cpu className="w-6 h-6 text-brand-primary" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp4_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp4_desc')}</p>
+              </div>
+
+              {/* Card 5: SDLC */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-secondary/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <Layers className="w-6 h-6 text-brand-secondary" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp5_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp5_desc')}</p>
+              </div>
+
+              {/* Card 6: Standards */}
+              <div className="bg-brand-surface p-8 rounded-xl border border-brand-surfaceLight hover:border-brand-accent/50 transition-all hover:shadow-lg flex flex-col gap-4">
+                 <div className="w-12 h-12 bg-brand-deep rounded-lg flex items-center justify-center border border-brand-surfaceLight">
+                    <ShieldCheck className="w-6 h-6 text-brand-accent" />
+                 </div>
+                 <h4 className="text-lg font-bold text-brand-text font-display">{t('sections.exp6_title')}</h4>
+                 <p className="text-sm text-brand-muted leading-relaxed">{t('sections.exp6_desc')}</p>
+              </div>
+
             </div>
           </RevealOnScroll>
         </div>

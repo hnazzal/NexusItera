@@ -1,209 +1,77 @@
+
 import { 
   Code, 
   Smartphone, 
   Layout, 
   Server, 
-  Trello, 
+  Bot, 
   Cpu, 
   ScanLine,
   LayoutDashboard,
-  Briefcase
+  BrainCircuit,
+  Database,
+  ShieldCheck,
+  Zap,
+  FileText,
+  Calculator,
+  Search,
+  CheckCircle2,
+  Rocket,
+  Layers
 } from 'lucide-react';
 import { Project, Service, TeamMember, Testimonial, Product, LocalizedData } from './types';
 
-export const COMPANY_NAME = "NexusItera";
+export const COMPANY_NAME = "NexusItera Tech";
 export const COMPANY_TAGLINE: LocalizedData<string> = {
-  en: "Where Ideas Connect and Evolve",
-  ar: "حيث تتصل الأفكار وتتطور"
-};
-
-export const TESTIMONIALS_DATA: LocalizedData<Testimonial[]> = {
-  en: [
-    {
-      id: 't1',
-      client: 'Jonathan Sterling',
-      company: 'Apex Banking Group',
-      quote: 'NexusItera delivered a robust fintech solution that completely modernized our transaction processing layer.'
-    },
-    {
-      id: 't2',
-      client: 'Maria Gonzalez',
-      company: 'LogiChain Intl',
-      quote: 'Their AI-driven dashboard gave us visibility we never thought possible. A true partner in innovation.'
-    },
-    {
-      id: 't3',
-      client: 'Ahmed Al-Fayed',
-      company: 'Future Ventures',
-      quote: 'Professional, punctual, and technically brilliant. They transformed our startup idea into a scalable reality.'
-    }
-  ],
-  ar: [
-    {
-      id: 't1',
-      client: 'جوناثان ستيرلينغ',
-      company: 'مجموعة أبيكس المصرفية',
-      quote: 'قدمت نيكسوس إيتيرا حلولاً مالية قوية أحدثت نقلة نوعية في طبقة معالجة المعاملات لدينا.'
-    },
-    {
-      id: 't2',
-      client: 'ماريا جونزاليس',
-      company: 'لوجي تشين الدولية',
-      quote: 'منحتنا لوحة التحكم المدعومة بالذكاء الاصطناعي رؤية لم نكن نتخيلها. شريك حقيقي في الابتكار.'
-    },
-    {
-      id: 't3',
-      client: 'أحمد الفايد',
-      company: 'مشاريع المستقبل',
-      quote: 'احترافية، التزام بالوقت، وبراعة تقنية. حولوا فكرة شركتنا الناشئة إلى واقع قابل للتوسع.'
-    }
-  ]
+  en: "Intelligent Systems Designed for Evolution",
+  ar: "أنظمة ذكية مصممة للتطور"
 };
 
 export const SERVICES_DATA: LocalizedData<Service[]> = {
   en: [
     {
-      id: 'web-dev',
-      title: 'Web Ecosystems',
-      description: 'Scalable, high-performance web architectures using React, Node.js, and modern frameworks tailored for enterprise evolution.',
-      icon: Layout,
-      features: ['SPA Architecture', 'Progressive Web Apps', 'Enterprise Dashboards']
+      id: 'consulting',
+      title: 'AI & Software Consulting',
+      description: 'Strategic guidance on integrating AI logic into business architectures for maximum efficiency.',
+      icon: BrainCircuit,
+      features: ['AI Strategy', 'System Architecture', 'Process Optimization']
     },
     {
-      id: 'mobile-dev',
-      title: 'Mobile App Development',
-      description: 'Native and cross-platform mobile experiences that engage users and drive business growth.',
-      icon: Smartphone,
-      features: ['iOS & Android', 'React Native / Flutter', 'Mobile Strategy']
+      id: 'digital-trans',
+      title: 'Digital Transformation',
+      description: 'Modernizing legacy infrastructures into fast, scalable, cloud-native intelligent ecosystems.',
+      icon: Rocket,
+      features: ['Legacy Migration', 'Cloud-Native', 'Scalability']
     },
     {
-      id: 'custom-soft',
-      title: 'Custom Engineering',
-      description: 'Bespoke software engineering to solve complex business challenges that off-the-shelf products cannot.',
-      icon: Code,
-      features: ['API Integration', 'Legacy Migration', 'SaaS Development']
-    },
-    {
-      id: 'pm-consulting',
-      title: 'Project Intelligence',
-      description: 'Expert project delivery using Agile and Waterfall methodologies to ensure on-time, on-budget execution.',
-      icon: Trello,
-      features: ['Agile Transformation', 'Risk Management', 'Resource Planning']
-    },
-    {
-      id: 'cloud-infra',
-      title: 'Cloud & DevOps',
-      description: 'Secure, scalable cloud infrastructure design and automated CI/CD pipelines.',
-      icon: Server,
-      features: ['AWS / Azure / GCP', 'Docker & Kubernetes', 'Security Audits']
+      id: 'delivery',
+      title: 'Project Management',
+      description: 'Precision-led delivery of complex technical initiatives using agile methodologies.',
+      icon: CheckCircle2,
+      features: ['Agile Delivery', 'Risk Management', 'Quality Assurance']
     }
   ],
   ar: [
     {
-      id: 'web-dev',
-      title: 'بيئات الويب',
-      description: 'هيكليات ويب قابلة للتوسع وعالية الأداء باستخدام React و Node.js وأطر عمل حديثة مصممة لتطور المؤسسات.',
-      icon: Layout,
-      features: ['هيكلية الصفحة الواحدة', 'تطبيقات الويب التقدمية', 'لوحات تحكم المؤسسات']
+      id: 'consulting',
+      title: 'استشارات الذكاء الاصطناعي والبرمجيات',
+      description: 'توجيه استراتيجي لدمج منطق الذكاء الاصطناعي في هياكل الأعمال لتحقيق أقصى قدر من الكفاءة.',
+      icon: BrainCircuit,
+      features: ['استراتيجية الذكاء الاصطناعي', 'هيكلية النظام', 'تحسين العمليات']
     },
     {
-      id: 'mobile-dev',
-      title: 'تطوير تطبيقات الجوال',
-      description: 'تجارب جوال أصلية ومتعددة المنصات تتفاعل مع المستخدمين وتدفع نمو الأعمال.',
-      icon: Smartphone,
-      features: ['iOS و Android', 'React Native / Flutter', 'استراتيجيات الجوال']
+      id: 'digital-trans',
+      title: 'التحول الرقمي',
+      description: 'تحديث البنى التحتية القديمة لتصبح أنظمة سحابية ذكية وسريعة وقابلة للتوسع.',
+      icon: Rocket,
+      features: ['نقل الأنظمة', 'سحابية', 'قابلية التوسع']
     },
     {
-      id: 'custom-soft',
-      title: 'هندسة برمجيات مخصصة',
-      description: 'هندسة برمجيات مفصلة لحل تحديات الأعمال المعقدة التي لا تستطيع المنتجات الجاهزة حلها.',
-      icon: Code,
-      features: ['تكامل API', 'نقل الأنظمة القديمة', 'تطوير SaaS']
-    },
-    {
-      id: 'pm-consulting',
-      title: 'ذكاء المشاريع',
-      description: 'تسليم مشاريع خبير باستخدام منهجيات Agile و Waterfall لضمان التنفيذ في الوقت المحدد وفي حدود الميزانية.',
-      icon: Trello,
-      features: ['التحول إلى Agile', 'إدارة المخاطر', 'تخطيط الموارد']
-    },
-    {
-      id: 'cloud-infra',
-      title: 'الحوسبة السحابية و DevOps',
-      description: 'تصميم بنية تحتية سحابية آمنة وقابلة للتوسع وخطوط أنابيب CI/CD مؤتمتة.',
-      icon: Server,
-      features: ['AWS / Azure / GCP', 'Docker و Kubernetes', 'تدقيق الأمان']
-    }
-  ]
-};
-
-export const PROJECTS_DATA: LocalizedData<Project[]> = {
-  en: [
-    {
-      id: 'fintech-core',
-      title: 'NovaBank Core System',
-      category: 'FinTech',
-      description: 'A complete digital banking transformation platform handling millions of secure transactions daily.',
-      imageUrl: 'https://picsum.photos/800/600?random=1',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker']
-    },
-    {
-      id: 'logistics-tracker',
-      title: 'Global Logistics Tracker',
-      category: 'Supply Chain',
-      description: 'Real-time fleet management and cargo tracking system with predictive delay analysis.',
-      imageUrl: 'https://picsum.photos/800/600?random=2',
-      technologies: ['Flutter', 'Firebase', 'Google Maps API']
-    },
-    {
-      id: 'health-connect',
-      title: 'HealthConnect Portal',
-      category: 'Healthcare',
-      description: 'HIPAA-compliant telemedicine platform connecting patients with specialists instantly.',
-      imageUrl: 'https://picsum.photos/800/600?random=3',
-      technologies: ['Next.js', 'WebRTC', 'AWS']
-    },
-    {
-      id: 'smart-retail',
-      title: 'OmniShop Retail Dashboard',
-      category: 'E-Commerce',
-      description: 'Unified inventory and sales analytics dashboard for a multinational retail chain.',
-      imageUrl: 'https://picsum.photos/800/600?random=4',
-      technologies: ['Vue.js', 'Python', 'GraphQL']
-    }
-  ],
-  ar: [
-    {
-      id: 'fintech-core',
-      title: 'نظام نوفا بنك الأساسي',
-      category: 'التقنية المالية',
-      description: 'منصة تحول رقمي مصرفي متكاملة تتعامل مع ملايين المعاملات الآمنة يومياً.',
-      imageUrl: 'https://picsum.photos/800/600?random=1',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker']
-    },
-    {
-      id: 'logistics-tracker',
-      title: 'متتبع اللوجستيات العالمي',
-      category: 'سلاسل الإمداد',
-      description: 'نظام إدارة الأسطول وتتبع الشحنات في الوقت الفعلي مع تحليل تنبؤي للتأخير.',
-      imageUrl: 'https://picsum.photos/800/600?random=2',
-      technologies: ['Flutter', 'Firebase', 'Google Maps API']
-    },
-    {
-      id: 'health-connect',
-      title: 'بوابة الاتصال الصحي',
-      category: 'الرعاية الصحية',
-      description: 'منصة طب عن بعد متوافقة مع HIPAA تربط المرضى بالأخصائيين فورياً.',
-      imageUrl: 'https://picsum.photos/800/600?random=3',
-      technologies: ['Next.js', 'WebRTC', 'AWS']
-    },
-    {
-      id: 'smart-retail',
-      title: 'لوحة أومني شوب للتجزئة',
-      category: 'التجارة الإلكترونية',
-      description: 'لوحة تحليلات موحدة للمخزون والمبيعات لسلسلة تجزئة متعددة الجنسيات.',
-      imageUrl: 'https://picsum.photos/800/600?random=4',
-      technologies: ['Vue.js', 'Python', 'GraphQL']
+      id: 'delivery',
+      title: 'إدارة المشاريع',
+      description: 'تسليم دقيق للمبادرات التقنية المعقدة باستخدام منهجيات رشيقة.',
+      icon: CheckCircle2,
+      features: ['تسليم أجايل', 'إدارة المخاطر', 'ضمان الجودة']
     }
   ]
 };
@@ -211,101 +79,160 @@ export const PROJECTS_DATA: LocalizedData<Project[]> = {
 export const PRODUCTS_DATA: LocalizedData<Product[]> = {
   en: [
     {
-      id: 'ai-invoice',
-      name: 'AI Invoice Extraction',
-      tagline: 'Autonomous financial intelligence.',
-      description: 'Liberate your business from the burden of processing massive volumes of invoices. Our system automatically extracts data and tracks payments, while our AI agent actively assists and follows up with you—eliminating operational suffering entirely.',
-      icon: ScanLine,
-      features: ['High-Volume Extraction', 'Smart Follow-up Agents', 'Zero-Touch Reconciliation'],
+      id: 'knowledge-distiller',
+      name: 'Knowledge Distiller',
+      tagline: 'Text to Insights',
+      description: 'Transforms unstructured enterprise data into structured knowledge graphs and actionable insights using advanced NLP.',
+      icon: BrainCircuit,
+      features: ['Knowledge Graphing', 'Auto-Summarization', 'Concept Extraction'],
       status: 'Live',
-      price: 'Scale'
+      price: 'SaaS'
+    },
+    {
+      id: 'invoice-extractor',
+      name: 'Invoice Nexus',
+      tagline: 'Instant Processing',
+      description: 'A high-precision AI OCR engine that reads invoices, validates data, and integrates directly with ERP systems.',
+      icon: ScanLine,
+      features: ['99% Accuracy', 'Multi-Language', 'ERP Integration'],
+      status: 'Live',
+      price: 'API'
     },
     {
       id: 'kpi-dashboard',
-      name: 'Intelligent KPI Dashboard',
-      tagline: 'From Excel to Insights instantly.',
-      description: 'Transform your raw Excel sheets into a strategic command center without the complexity. Simply upload your spreadsheets, and our AI instantly structures the data, identifies trends, and builds interactive visualizations for you. No coding, no hassle.',
+      name: 'Metric Flow',
+      tagline: 'Dynamic Analytics',
+      description: 'An intelligent dashboard that turns static Excel sheets into real-time strategic visualizations for Finance & HR.',
       icon: LayoutDashboard,
-      features: ['Instant Excel Import', 'AI Trend Forecasting', 'Zero-Setup Visualization'],
+      features: ['Real-time Viz', 'Predictive KPIs', 'Data Blending'],
       status: 'Live',
-      price: 'Growth'
+      price: 'Pro'
     },
     {
-      id: 'smart-pm',
-      name: 'Smart Project Nexus',
-      tagline: 'Projects & Payments. Perfectly Synced.',
-      description: 'Manage your projects and financial flows in a single intelligent environment. Link deliverables directly to payments, while our AI companion guides you step-by-step through the lifecycle, ensuring budget adherence and smart execution.',
-      icon: Briefcase,
-      features: ['Milestone-Linked Payments', 'AI Execution Assistant', 'Unified Financial Timeline'],
+      id: 'pm-tool',
+      name: 'Itera Plan',
+      tagline: 'Smart Estimation',
+      description: 'AI-assisted project planning and cost estimation tool designed for engineering teams needing precision without clutter.',
+      icon: Calculator,
+      features: ['Cost AI', 'Resource Alloc', 'Smart Timeline'],
+      status: 'Beta',
+      price: 'Team'
+    },
+    {
+      id: 'smart-dms',
+      name: 'Semantic DMS',
+      tagline: 'Natural Search',
+      description: 'Next-gen document management with semantic search capabilities, allowing users to query archives using natural language.',
+      icon: FileText,
+      features: ['Semantic Query', 'Auto-Tagging', 'Secure Archive'],
       status: 'Live',
-      price: 'Professional'
+      price: 'Enterprise'
     }
   ],
   ar: [
     {
-      id: 'ai-invoice',
-      name: 'استخراج الفواتير بالذكاء الاصطناعي',
-      tagline: 'ذكاء مالي مستقل.',
-      description: 'حرر عملك من عبء معالجة كميات هائلة من الفواتير. يقوم نظامنا باستخراج البيانات وتتبع المدفوعات تلقائياً، بينما يقوم وكيل الذكاء الاصطناعي بمساعدتك والمتابعة معك بفعالية—مما يقضي على المعاناة التشغيلية تماماً.',
-      icon: ScanLine,
-      features: ['استخراج عالي الحجم', 'وكلاء متابعة أذكياء', 'تسوية بدون تدخل يدوي'],
+      id: 'knowledge-distiller',
+      name: 'مقطر المعرفة',
+      tagline: 'من نصوص إلى رؤى',
+      description: 'يحول بيانات المؤسسة غير المهيكلة إلى رسوم بيانية للمعرفة ورؤى قابلة للتنفيذ باستخدام معالجة اللغة الطبيعية.',
+      icon: BrainCircuit,
+      features: ['رسم بياني للمعرفة', 'تلخيص تلقائي', 'استخراج المفاهيم'],
       status: 'متاح',
-      price: 'مقياس'
+      price: 'SaaS'
+    },
+    {
+      id: 'invoice-extractor',
+      name: 'نيكسوس الفواتير',
+      tagline: 'معالجة فورية',
+      description: 'محرك تعرف ضوئي عالي الدقة يقرأ الفواتير، يتحقق من البيانات، ويتكامل مباشرة مع أنظمة تخطيط الموارد.',
+      icon: ScanLine,
+      features: ['دقة 99%', 'متعدد اللغات', 'تكامل ERP'],
+      status: 'متاح',
+      price: 'API'
     },
     {
       id: 'kpi-dashboard',
-      name: 'لوحة مؤشرات الأداء الذكية',
-      tagline: 'من إكسل إلى رؤى فورية.',
-      description: 'حول جداول إكسل الخام إلى مركز قيادة استراتيجي دون أي تعقيد. ما عليك سوى رفع ملفاتك، وسيقوم الذكاء الاصطناعي لدينا بتنظيم البيانات فوراً، وتحديد الاتجاهات، وبناء تصورات تفاعلية لك. بدون برمجة، وبدون عناء.',
+      name: 'تدفق المؤشرات',
+      tagline: 'تحليلات ديناميكية',
+      description: 'لوحة تحكم ذكية تحول ملفات إكسل الثابتة إلى تصورات استراتيجية فورية للمالية والموارد البشرية.',
       icon: LayoutDashboard,
-      features: ['استيراد فوري للإكسل', 'تنبؤ الاتجاهات بالذكاء الاصطناعي', 'تصور بيانات بدون إعداد'],
+      features: ['رؤية فورية', 'مؤشرات تنبؤية', 'دمج البيانات'],
       status: 'متاح',
-      price: 'نمو'
+      price: 'محترف'
     },
     {
-      id: 'smart-pm',
-      name: 'نظام إدارة المشاريع الذكي',
-      tagline: 'المشاريع والمدفوعات. متزامنة بامتياز.',
-      description: 'أدر مشاريعك وتدفقاتك المالية في بيئة ذكية واحدة. اربط التسليمات مباشرة بالمدفوعات، بينما يرافقك رفيق الذكاء الاصطناعي خطوة بخطوة خلال دورة الحياة، مما يضمن الالتزام بالميزانية والتنفيذ الذكي.',
-      icon: Briefcase,
-      features: ['مدفوعات مرتبطة بالإنجاز', 'مساعد تنفيذ ذكي', 'جدول زمني مالي موحد'],
+      id: 'pm-tool',
+      name: 'إيتيرا للتخطيط',
+      tagline: 'تقدير ذكي',
+      description: 'أداة تخطيط وتقدير تكاليف مدعومة بالذكاء الاصطناعي مصممة للفرق الهندسية التي تحتاج إلى الدقة دون فوضى.',
+      icon: Calculator,
+      features: ['ذكاء التكلفة', 'توزيع الموارد', 'جدول ذكي'],
+      status: 'تجريبي',
+      price: 'فريق'
+    },
+    {
+      id: 'smart-dms',
+      name: 'إدارة المستندات الدلالية',
+      tagline: 'بحث طبيعي',
+      description: 'الجيل القادم من إدارة المستندات مع قدرات البحث الدلالي، مما يسمح للمستخدمين باستعلام الأرشيف بلغة طبيعية.',
+      icon: FileText,
+      features: ['استعلام دلالي', 'وسم تلقائي', 'أرشيف آمن'],
       status: 'متاح',
-      price: 'احترافي'
+      price: 'مؤسسات'
+    }
+  ]
+};
+
+export const AI_CAPABILITIES = {
+  en: [
+    { title: 'Generative AI', desc: 'Custom LLM integration & RAG pipelines.', icon: Bot },
+    { title: 'Semantic Search', desc: 'Understanding intent beyond keywords.', icon: Search },
+    { title: 'Intelligent Automation', desc: 'Self-correcting process workflows.', icon: Cpu },
+    { title: 'Predictive Analytics', desc: 'Forecasting trends from historical data.', icon: Zap },
+  ],
+  ar: [
+    { title: 'الذكاء الاصطناعي التوليدي', desc: 'تكامل نماذج اللغة الكبيرة وخطوط RAG.', icon: Bot },
+    { title: 'البحث الدلالي', desc: 'فهم النية وراء الكلمات المفتاحية.', icon: Search },
+    { title: 'الأتمتة الذكية', desc: 'سير عمل يصحح نفسه ذاتياً.', icon: Cpu },
+    { title: 'التحليلات التنبؤية', desc: 'توقع الاتجاهات من البيانات التاريخية.', icon: Zap },
+  ]
+};
+
+export const TESTIMONIALS_DATA: LocalizedData<Testimonial[]> = {
+  en: [
+    {
+      id: 't1',
+      client: 'CTO',
+      company: 'FinTech Corp',
+      quote: 'NexusItera transformed our data pipeline. The efficiency gains were immediate.'
+    },
+    {
+      id: 't2',
+      client: 'Head of Ops',
+      company: 'Global Logistics',
+      quote: 'The automation tools are precise and reliable. Truly intelligent engineering.'
+    }
+  ],
+  ar: [
+    {
+      id: 't1',
+      client: 'مدير التقنية',
+      company: 'مؤسسة مالية',
+      quote: 'نيكسوس إيتيرا حولت مسار بياناتنا. مكاسب الكفاءة كانت فورية.'
+    },
+    {
+      id: 't2',
+      client: 'رئيس العمليات',
+      company: 'لوجستيات عالمية',
+      quote: 'أدوات الأتمتة دقيقة وموثوقة. هندسة ذكية حقاً.'
     }
   ]
 };
 
 export const TEAM_DATA: LocalizedData<TeamMember[]> = {
-  en: [
-    {
-      id: 'founder',
-      name: 'James Stirling',
-      role: 'Founder & Principal Architect',
-      bio: 'With over 15 years in enterprise software and banking systems, James leads NexusItera with a focus on engineering excellence and strategic innovation.',
-      imageUrl: 'https://picsum.photos/400/400?random=10'
-    },
-    {
-      id: 'lead-dev',
-      name: 'Alicia Varrick',
-      role: 'Head of Engineering',
-      bio: 'Expert in cloud-native architectures and AI integration. Alicia ensures every line of code meets our rigorous quality standards.',
-      imageUrl: 'https://picsum.photos/400/400?random=11'
-    }
-  ],
-  ar: [
-    {
-      id: 'founder',
-      name: 'جيمس ستيرلينغ',
-      role: 'المؤسس والمهندس الرئيسي',
-      bio: 'مع أكثر من 15 عاماً في برمجيات المؤسسات والأنظمة المصرفية، يقود جيمس نيكسوس إيتيرا بتركيز على التميز الهندسي والابتكار الاستراتيجي.',
-      imageUrl: 'https://picsum.photos/400/400?random=10'
-    },
-    {
-      id: 'lead-dev',
-      name: 'أليسيا فاريك',
-      role: 'رئيس قسم الهندسة',
-      bio: 'خبيرة في البنى السحابية وتكامل الذكاء الاصطناعي. تضمن أليسيا أن كل سطر من الكود يلبي معايير الجودة الصارمة لدينا.',
-      imageUrl: 'https://picsum.photos/400/400?random=11'
-    }
-  ]
+  en: [], ar: [] 
+};
+
+export const PROJECTS_DATA: LocalizedData<Project[]> = {
+    en: [], ar: []
 };

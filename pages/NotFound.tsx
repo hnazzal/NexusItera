@@ -23,7 +23,7 @@ const NotFound: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[100px] animate-pulse"></div>
 
       <div className="relative z-10 text-center max-w-lg px-4">
-        <div className="w-24 h-24 bg-brand-surface border border-brand-primary/30 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+        <div className="w-24 h-24 bg-brand-surface border border-brand-primary/30 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(0,163,204,0.2)]">
             <AlertTriangle className="w-12 h-12 text-brand-secondary animate-pulse" />
         </div>
         
