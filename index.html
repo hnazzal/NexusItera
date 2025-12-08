@@ -1,14 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#020408" />
-    <meta
-      name="description"
-      content="NexusItera - Where Ideas Connect and Evolve"
-    />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%236D28D9%22/></svg>">
+    
+    <!-- SEO & Social Meta Tags -->
     <title>NexusItera | Intelligent Engineering</title>
+    <meta name="description" content="NexusItera - AI-Powered Software Solutions. We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nexusitera.com/" />
+    <meta property="og:title" content="NexusItera | Intelligent Engineering" />
+    <meta property="og:description" content="We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nexusitera.com/" />
+    <meta property="twitter:title" content="NexusItera | Intelligent Engineering" />
+    <meta property="twitter:description" content="We transform businesses with intelligent engineering, custom web/mobile apps, and autonomous financial systems." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,9 +42,11 @@
                 dark: 'var(--bg-dark)',      
                 surface: 'var(--bg-surface)',   
                 surfaceLight: 'var(--bg-surface-light)',
-                primary: '#00F0FF',   // Neon Cyan (Constant)
-                secondary: '#7000FF', // Neon Purple (Constant)
-                accent: '#00B8D4',    // Darker Cyan (Constant)
+                primary: '#6D28D9',   // Royal Purple
+                secondary: '#3B82F6', // Sky Blue
+                accent: '#3B82F6',    // Sky Blue
+                pink: '#F472B6',      // Soft Pink
+                yellow: '#FACC15',    // Light Gold
                 text: 'var(--text-main)',      
                 muted: 'var(--text-muted)',     
                 border: 'var(--border-color)',
@@ -37,11 +55,16 @@
             backgroundImage: {
               'hero-pattern': "url('https://grainy-gradients.vercel.app/noise.svg')",
               'grid-pattern': "linear-gradient(to right, var(--bg-surface-light) 1px, transparent 1px), linear-gradient(to bottom, var(--bg-surface-light) 1px, transparent 1px)",
+              'gradient-primary': "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
             },
             animation: {
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'glow': 'glow 2s ease-in-out infinite alternate',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'shine': 'shine 1.5s ease-out infinite',
+              'text-shimmer': 'textShimmer 3s ease infinite',
             },
             keyframes: {
               fadeInUp: {
@@ -49,39 +72,61 @@
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               glow: {
-                '0%': { boxShadow: '0 0 5px #00F0FF, 0 0 10px #00F0FF' },
-                '100%': { boxShadow: '0 0 20px #00F0FF, 0 0 30px #00F0FF' },
+                '0%': { boxShadow: '0 0 5px #6D28D9, 0 0 10px #6D28D9' },
+                '100%': { boxShadow: '0 0 20px #6D28D9, 0 0 30px #6D28D9' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              shine: {
+                '0%': { left: '-100%' },
+                '100%': { left: '100%' }
+              },
+              textShimmer: {
+                '0%, 100%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'left center'
+                },
+                '50%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'right center'
+                }
               }
             }
           },
         },
       };
     </script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts with Preconnect for speed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        /* Light Mode Defaults */
-        --bg-deep: #F8FAFC;       /* Slate 50 */
-        --bg-dark: #F1F5F9;       /* Slate 100 */
-        --bg-surface: #FFFFFF;    /* White */
-        --bg-surface-light: #E2E8F0; /* Slate 200 (Borders) */
-        --text-main: #0F172A;     /* Slate 900 */
-        --text-muted: #64748B;    /* Slate 500 */
-        --border-color: #CBD5E1;  /* Slate 300 */
+        /* Modern Luxurious Dark Palette */
+        --bg-deep: #0F172A;       /* Deep Navy */
+        --bg-dark: #020617;       /* Darker Navy */
+        --bg-surface: #1E293B;    /* Slate 800 */
+        --bg-surface-light: #334155; /* Slate 700 */
+        --text-main: #F8FAFC;     /* Soft White */
+        --text-muted: #CBD5E1;    /* Soft Gray */
+        --border-color: #334155;  /* Slate 700 */
       }
 
-      .dark {
-        /* Dark Mode Overrides */
-        --bg-deep: #020408;       /* Void Black */
-        --bg-dark: #050B14;       /* Deep Black/Blue */
-        --bg-surface: #0A1A2F;    /* Deep Space Blue */
-        --bg-surface-light: #1E293B; /* Slate 800 (Highlight/Border) */
-        --text-main: #E2E8F0;     /* Slate 200 */
-        --text-muted: #94A3B8;    /* Slate 400 */
-        --border-color: #1E293B;
+      /* Optional Light Mode Overrides if user toggles, but default is dark per request */
+      .light {
+        --bg-deep: #F8FAFC;
+        --bg-dark: #F1F5F9;
+        --bg-surface: #FFFFFF;
+        --bg-surface-light: #E2E8F0;
+        --text-main: #0F172A;
+        --text-muted: #64748B;
+        --border-color: #CBD5E1;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -94,53 +139,82 @@
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Cairo', sans-serif;
       }
-      /* Custom Scrollbar */
+      
+      /* Refined Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
         background: var(--bg-deep); 
       }
       ::-webkit-scrollbar-thumb {
         background: var(--bg-surface-light); 
-        border-radius: 4px;
-        border: 1px solid var(--bg-surface);
+        border-radius: 9999px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #00F0FF; 
+        background: #6D28D9; 
       }
       
-      .glass-card {
-        background: rgba(10, 26, 47, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 240, 255, 0.1);
+      /* Initial Loader */
+      .initial-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--bg-deep);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out, visibility 0.5s;
       }
-      
-      .neon-text {
-        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+      .initial-loader.hidden {
+        opacity: 0;
+        visibility: hidden;
       }
-      
-      /* Light mode overrides for glass effect if needed */
-      html:not(.dark) .glass-card {
-         background: rgba(255, 255, 255, 0.7);
-         border: 1px solid rgba(0, 0, 0, 0.05);
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid var(--bg-surface-light);
+        border-top-color: #6D28D9;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-shadow: 0 0 15px rgba(109, 40, 217, 0.3);
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="initial-loader" id="loader">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <script>
+      // Hide loader when React mounts
+      window.onload = function() {
+        setTimeout(function() {
+          const loader = document.getElementById('loader');
+          if(loader) loader.classList.add('hidden');
+        }, 500);
+      };
+    </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

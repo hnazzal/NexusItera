@@ -17,6 +17,49 @@ export const COMPANY_TAGLINE: LocalizedData<string> = {
   ar: "حيث تتصل الأفكار وتتطور"
 };
 
+export const TESTIMONIALS_DATA: LocalizedData<Testimonial[]> = {
+  en: [
+    {
+      id: 't1',
+      client: 'Jonathan Sterling',
+      company: 'Apex Banking Group',
+      quote: 'NexusItera delivered a robust fintech solution that completely modernized our transaction processing layer.'
+    },
+    {
+      id: 't2',
+      client: 'Maria Gonzalez',
+      company: 'LogiChain Intl',
+      quote: 'Their AI-driven dashboard gave us visibility we never thought possible. A true partner in innovation.'
+    },
+    {
+      id: 't3',
+      client: 'Ahmed Al-Fayed',
+      company: 'Future Ventures',
+      quote: 'Professional, punctual, and technically brilliant. They transformed our startup idea into a scalable reality.'
+    }
+  ],
+  ar: [
+    {
+      id: 't1',
+      client: 'جوناثان ستيرلينغ',
+      company: 'مجموعة أبيكس المصرفية',
+      quote: 'قدمت نيكسوس إيتيرا حلولاً مالية قوية أحدثت نقلة نوعية في طبقة معالجة المعاملات لدينا.'
+    },
+    {
+      id: 't2',
+      client: 'ماريا جونزاليس',
+      company: 'لوجي تشين الدولية',
+      quote: 'منحتنا لوحة التحكم المدعومة بالذكاء الاصطناعي رؤية لم نكن نتخيلها. شريك حقيقي في الابتكار.'
+    },
+    {
+      id: 't3',
+      client: 'أحمد الفايد',
+      company: 'مشاريع المستقبل',
+      quote: 'احترافية، التزام بالوقت، وبراعة تقنية. حولوا فكرة شركتنا الناشئة إلى واقع قابل للتوسع.'
+    }
+  ]
+};
+
 export const SERVICES_DATA: LocalizedData<Service[]> = {
   en: [
     {

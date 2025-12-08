@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface LogoProps {
@@ -12,13 +13,13 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-[0_0_10px_rgba(0,240,255,0.3)] transition-all duration-500 ease-out group-hover/logo:drop-shadow-[0_0_25px_rgba(112,0,255,0.6)] group-hover/logo:scale-105"
+        className="w-full h-full drop-shadow-[0_0_10px_rgba(109,40,217,0.3)] transition-all duration-500 ease-out group-hover/logo:drop-shadow-[0_0_25px_rgba(59,130,246,0.6)] group-hover/logo:scale-105"
       >
         <defs>
           <linearGradient id="logo_gradient_flow" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00F0FF" />
-            <stop offset="50%" stopColor="#2D6BFF" />
-            <stop offset="100%" stopColor="#7000FF" />
+            <stop offset="0%" stopColor="#3B82F6" /> {/* Sky Blue */}
+            <stop offset="50%" stopColor="#818CF8" /> {/* Indigo */}
+            <stop offset="100%" stopColor="#6D28D9" /> {/* Royal Purple */}
           </linearGradient>
           <filter id="glow-point" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="2" result="blur" />
@@ -26,7 +27,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
           </filter>
         </defs>
 
-        {/* Background Orbit: Represents the ecosystem */}
+        {/* Background Orbit */}
         <circle 
           cx="50" 
           cy="50" 
@@ -38,7 +39,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
           className="origin-center animate-[spin_12s_linear_infinite] transition-all duration-700 group-hover/logo:opacity-30"
         />
 
-        {/* The Neural Flow N - Defined as a path for the animation to follow */}
+        {/* The Neural Flow N */}
         <path
           id="neural-path"
           d="M 30 80 L 30 35 Q 30 20 45 30 L 55 70 Q 70 80 70 65 L 70 20"
@@ -49,7 +50,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
           className="transition-all duration-500 ease-out group-hover/logo:stroke-[12px]"
         />
 
-        {/* Traveling Data Packet: The "Sweet" Movement */}
+        {/* Traveling Data Packet */}
         <circle r="3" fill="white" filter="url(#glow-point)">
           <animateMotion 
             dur="3s" 
@@ -67,7 +68,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
           cx="30" 
           cy="80" 
           r="4" 
-          fill="#00F0FF" 
+          fill="#3B82F6" 
           className="transition-all duration-300 ease-out group-hover/logo:r-5 group-hover/logo:fill-white"
         />
 
@@ -77,7 +78,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
               cx="70" 
               cy="20" 
               r="5" 
-              fill="#7000FF" 
+              fill="#6D28D9" 
               className="transition-all duration-300 ease-out group-hover/logo:r-6 group-hover/logo:fill-white" 
             />
             {/* Pulse Ring */}
@@ -85,9 +86,9 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", withText = 
               cx="70" 
               cy="20" 
               r="10" 
-              stroke="#7000FF" 
+              stroke="#FACC15" 
               strokeWidth="1" 
-              className="opacity-50 animate-pulse transition-colors duration-300 group-hover/logo:stroke-[#00F0FF]" 
+              className="opacity-50 animate-pulse transition-colors duration-300 group-hover/logo:stroke-[#F472B6]" 
             />
         </g>
       </svg>

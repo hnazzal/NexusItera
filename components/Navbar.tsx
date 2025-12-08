@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-sm tracking-wide transition-all duration-200 hover:text-brand-secondary dark:hover:text-brand-primary ${
+                  `text-sm tracking-wide transition-all duration-200 transform hover:scale-110 hover:text-brand-secondary dark:hover:text-brand-primary ${
                     isActive 
                       ? 'text-brand-secondary dark:text-brand-primary font-bold dark:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]' 
                       : 'text-brand-text font-medium'
