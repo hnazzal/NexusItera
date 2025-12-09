@@ -53,14 +53,6 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center mt-[-50px]">
           <RevealOnScroll>
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-surface border border-brand-primary/30 backdrop-blur-md mb-10 shadow-lg dark:shadow-[0_0_20px_rgba(0,163,204,0.2)] animate-fade-in-up">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
-              </span>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-text">AI-First Engineering</span>
-            </div>
-            
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-brand-text mb-8 leading-[1.1] font-display tracking-tight drop-shadow-sm dark:drop-shadow-2xl">
               {t('hero.headline')}
             </h1>
